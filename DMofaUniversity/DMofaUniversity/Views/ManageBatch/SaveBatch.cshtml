@@ -1,0 +1,56 @@
+﻿@model DMofaUniversity.Models.tblBatch
+
+@{
+    ViewBag.Title = "SaveBatch";
+}
+
+<h2>Save Batch</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <div style="background-color: bisque">
+        <div class="form-horizontal">
+            <h4></h4>
+            <hr />
+            @Html.ValidationSummary(true)
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.BID, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.BID)
+                        @Html.ValidationMessageFor(model => model.BID)
+                    </div>
+                </div>*@
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Batch, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Batch)                  
+                    @Html.ValidationMessageFor(model => model.Batch)
+                    <p><h4>Formate : (1st-Batch,2nd-Batch,3rd-Batch......)</h4></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save Batch" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@if (TempData["message"] != null)
+{
+    <script type="text/javascript">
+        alert("@TempData["message"]");
+    </script>
+}
+<div>
+    @Html.ActionLink("Do more", "SaveBatch")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

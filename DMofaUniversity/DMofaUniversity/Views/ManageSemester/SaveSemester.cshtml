@@ -1,0 +1,56 @@
+﻿@model DMofaUniversity.Models.tblSemester
+
+@{
+    ViewBag.Title = "SaveSemester";
+}
+
+<h2>Save Semester</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <div style="background-color: bisque">
+        <div class="form-horizontal">
+            <h4></h4>
+            <hr />
+            @Html.ValidationSummary(true)
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.SID, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SID)
+                    @Html.ValidationMessageFor(model => model.SID)
+                </div>
+            </div>*@
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Semester, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Semester)
+                    @Html.ValidationMessageFor(model => model.Semester)
+                    <p><h4>Formate : (First, Second, Third......)</h4></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save Semester" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@if (TempData["message"] != null)
+{
+    <script type="text/javascript">
+        alert("@TempData["message"]");
+    </script>
+}
+<div>
+    @Html.ActionLink("Back to List", "SaveSemester")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

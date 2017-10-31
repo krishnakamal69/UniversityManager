@@ -1,0 +1,124 @@
+﻿@using DMofaUniversity.Models
+@model DMofaUniversity.Models.tblTeacherCourseAssign
+
+@{
+    ViewBag.Title = "SaveCourseToTeacher";
+}
+
+<h2>Assigne Course To Teacher</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <div style="background-color: bisque">
+        <div class="form-horizontal">
+            <h4></h4>
+            <hr />
+            @Html.ValidationSummary(true)
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.tblTeacherCourseID, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.tblTeacherCourseID)
+                    @Html.ValidationMessageFor(model => model.tblTeacherCourseID)
+                </div>
+            </div>*@
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SID, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.SID)
+                    @Html.ValidationMessageFor(model => model.SID)*@
+                    <select name="SID" id="semesterid">
+                        <option value="">---Select a Semester----</option>
+                        @foreach (tblSemester semester in ViewBag.semesters)
+                        {
+                            <option value="@semester.SID">@semester.Semester</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CID, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.CID)
+                    @Html.ValidationMessageFor(model => model.CID)*@
+                    <select name="CID" id="Courseid"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TeacherId, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.TeacherId)
+                    @Html.ValidationMessageFor(model => model.TeacherId)*@
+                    <select name="TeacherId">
+                        <option value="">-----Select a Teacher----</option>
+                        @foreach (tblTeacher teacher in ViewBag.teachers)
+                        {
+                            <option value="@teacher.TeacherID">@teacher.Name</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.TeacherEmail, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TeacherEmail)
+                    @Html.ValidationMessageFor(model => model.TeacherEmail)
+                </div>
+            </div>*@
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Assigne" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@if (TempData["m"] != null)
+{
+    <script type="text/javascript">
+        alert("@TempData["m"]");
+    </script>
+}
+<div>
+    @Html.ActionLink("Do more", "SaveCourseToTeacher")
+</div>
+@section scripts
+{
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#semesterid").change(function () {
+
+                var deptId = $("#semesterid").val();
+                $("#Courseid").empty();
+                var json = {
+                    semesterid: deptId
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetCousreBySemesterId", "ManageCourseTeacher")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(json),
+                    success: function (data) {
+                        //alert(data);
+                        $.each(data, function (key, value) {
+                            //alert(key);
+                            $("#Courseid").append('<option value=' + value.CID + '>' + value.Course_Title + '</option>');
+
+                        });
+                    }
+                });
+            });
+        });
+
+    </script>
+}

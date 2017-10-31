@@ -1,0 +1,103 @@
+﻿@using DMofaUniversity.Models
+@model DMofaUniversity.Models.tblCourse
+
+@{
+    ViewBag.Title = "SaveCourse";
+}
+
+<h2>Save Course</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <div style="background-color: bisque">
+        <div class="form-horizontal">
+            <h4></h4>
+            <hr />
+            @Html.ValidationSummary(true)
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.CID, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.CID)
+                        @Html.ValidationMessageFor(model => model.CID)
+                    </div>
+                </div>*@
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Course_Code, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Course_Code)
+                    @Html.ValidationMessageFor(model => model.Course_Code)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Course_Title, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Course_Title)
+                    @Html.ValidationMessageFor(model => model.Course_Title)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MajorNonMajor, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MajorNonMajor)
+                    @Html.ValidationMessageFor(model => model.MajorNonMajor)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Marks, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Marks)
+                    @Html.ValidationMessageFor(model => model.Marks)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Credit, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Credit)
+                    @Html.ValidationMessageFor(model => model.Credit)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SID, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.SID)
+                    @Html.ValidationMessageFor(model => model.SID)*@
+                    <select name="SID">
+                        <option value="">----select a Semester----</option>
+                        @foreach(tblSemester semester in ViewBag.semester)
+                        {
+                            <option value="@semester.SID">@semester.Semester</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save Course" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@if (TempData["message"] != null)
+{
+    <script type="text/javascript">
+        alert("@TempData["message"]");
+    </script>
+}
+<div>
+    @Html.ActionLink("Do more", "SaveCourse")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

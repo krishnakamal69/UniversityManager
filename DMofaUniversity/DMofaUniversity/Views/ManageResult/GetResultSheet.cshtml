@@ -1,0 +1,108 @@
+﻿@using DMofaUniversity.Models
+@model DMofaUniversity.Models.SemesterCourse
+
+@{
+    ViewBag.Title = "GetResultSheet";
+    if ((string)Session["Email"] == null)
+    {
+        Response.Redirect(Url.Action("ManageLogIn", "ManageRegistration"));
+    }
+}
+
+<h2>Get Result Sheet</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <div style="background-color: bisque">
+        <div class="form-horizontal">
+            <h4>Get a Excel Sheet with student Roll of a Semester</h4>
+            <hr />
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SemesterId, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.SemesterId)
+                    @Html.ValidationMessageFor(model => model.SemesterId)*@
+                    <select name="SemesterId" id="SemesterId">
+                        <option value="">-----Select a Semester-----</option>
+                        @foreach (tblSemester semester in ViewBag.SemesterList)
+                        {
+                            <option value="@semester.SID">@semester.Semester</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CourseId, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.CourseId)
+                    @Html.ValidationMessageFor(model => model.CourseId)*@
+                    <select name="CourseId" id="CourseId"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.SessonId, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.SessonId)
+                      @Html.ValidationMessageFor(model => model.SessonId)*@
+                    <select name="SessonId" id="SessonId">
+                        <option value="">-----Select a Sesson-----</option>
+                        @foreach (tblSesson sesson in ViewBag.Sesson)
+                        {
+                            <option value="@sesson.SessonID">@sesson.Sesson</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Make Excel" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Do more", "GetResultSheet")
+</div>
+@section scripts
+{
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#SemesterId").change(function () {
+
+                var deptId = $("#SemesterId").val();
+                $("#CourseId").empty();
+                var json = {
+                    SemesterId: deptId
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetCousreBySemesterId", "ManageResult")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(json),
+                    success: function (data) {
+                        //alert(data);
+                        $.each(data, function (key, value) {
+                            //alert(key);
+                            $("#CourseId").append('<option value=' + value.CID + '>' + value.Course_Title + '</option>');
+
+                        });
+                    }
+                });
+            });
+        });
+
+    </script>
+}
+
+

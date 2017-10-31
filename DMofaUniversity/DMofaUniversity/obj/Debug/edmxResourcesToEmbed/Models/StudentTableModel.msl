@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DeptMofaUniversityModelofStudentStoreContainer" CdmEntityContainer="DeptMofaUniversityStudentConn">
+    <EntitySetMapping Name="tblStudents">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModelofStudent.tblStudent">
+        <MappingFragment StoreEntitySet="tblStudents">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="Roll" ColumnName="Roll" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StudentImagePath" ColumnName="StudentImagePath" />
+          <ScalarProperty Name="Deparment" ColumnName="Deparment" />
+          <ScalarProperty Name="SemisterID" ColumnName="SemisterID" />
+          <ScalarProperty Name="BatchID" ColumnName="BatchID" />
+          <ScalarProperty Name="SessonID" ColumnName="SessonID" />
+          <ScalarProperty Name="F_Name" ColumnName="F_Name" />
+          <ScalarProperty Name="M_Name" ColumnName="M_Name" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Caste" ColumnName="Caste" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Ssc_passed_Yeae" ColumnName="Ssc_passed_Yeae" />
+          <ScalarProperty Name="Ssc_Roll" ColumnName="Ssc_Roll" />
+          <ScalarProperty Name="Ssc_Result" ColumnName="Ssc_Result" />
+          <ScalarProperty Name="Ssc_Board" ColumnName="Ssc_Board" />
+          <ScalarProperty Name="Hsc_passed_Yeae" ColumnName="Hsc_passed_Yeae" />
+          <ScalarProperty Name="Hsc_Roll" ColumnName="Hsc_Roll" />
+          <ScalarProperty Name="Hsc_Result" ColumnName="Hsc_Result" />
+          <ScalarProperty Name="Hsc_Board" ColumnName="Hsc_Board" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="Distric" ColumnName="Distric" />
+          <ScalarProperty Name="Thana" ColumnName="Thana" />
+          <ScalarProperty Name="Post_Office" ColumnName="Post_Office" />
+          <ScalarProperty Name="Post_Code" ColumnName="Post_Code" />
+          <ScalarProperty Name="Present_Address" ColumnName="Present_Address" />
+          <ScalarProperty Name="Guardian_Name" ColumnName="Guardian_Name" />
+          <ScalarProperty Name="Guardian_mobile" ColumnName="Guardian_mobile" />
+          <ScalarProperty Name="Guardian_Email" ColumnName="Guardian_Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

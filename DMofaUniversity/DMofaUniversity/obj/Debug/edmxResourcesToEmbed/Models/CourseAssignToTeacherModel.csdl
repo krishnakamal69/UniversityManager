@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DeptMofaUniversityModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblTeacherCourseAssign">
+    <Key>
+      <PropertyRef Name="tblTeacherCourseID" />
+    </Key>
+    <Property Name="tblTeacherCourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SID" Type="Int32" />
+    <Property Name="CID" Type="Int32" />
+    <Property Name="TeacherId" Type="Int32" />
+    <Property Name="TeacherEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="CourseAssignConn" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblTeacherCourseAssigns" EntityType="Self.tblTeacherCourseAssign" />
+  </EntityContainer>
+</Schema>

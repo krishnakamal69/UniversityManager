@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DeptMofaUniversityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblBatch">
+    <Key>
+      <PropertyRef Name="BID" />
+    </Key>
+    <Property Name="BID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Batch" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblCourse">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Course_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Course_Title" Type="varchar" MaxLength="200" />
+    <Property Name="MajorNonMajor" Type="varchar" MaxLength="20" />
+    <Property Name="Marks" Type="varchar" MaxLength="20" />
+    <Property Name="Credit" Type="float" />
+    <Property Name="SID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblMidResult">
+    <Key>
+      <PropertyRef Name="MidResultID" />
+    </Key>
+    <Property Name="MidResultID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" />
+    <Property Name="CID" Type="int" />
+    <Property Name="FirstMidMark" Type="float" />
+    <Property Name="SecondtMidMark" Type="float" />
+  </EntityType>
+  <EntityType Name="tblResources">
+    <Key>
+      <PropertyRef Name="ResourceID" />
+    </Key>
+    <Property Name="ResourceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="FilePath" Type="varchar" MaxLength="500" />
+    <Property Name="FileTitle" Type="varchar" MaxLength="100" />
+    <Property Name="FileAuthor" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblRole">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_Name" Type="varchar" MaxLength="30" />
+    <Property Name="Role_Code" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblSemester">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="SID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Semester" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tblSesson">
+    <Key>
+      <PropertyRef Name="SessonID" />
+    </Key>
+    <Property Name="SessonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sesson" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblStudents">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Roll" Type="varchar" MaxLength="80" />
+    <Property Name="Name" Type="varchar" MaxLength="80" />
+    <Property Name="StudentImagePath" Type="varchar" MaxLength="500" />
+    <Property Name="Deparment" Type="varchar" MaxLength="100" />
+    <Property Name="SemisterID" Type="int" />
+    <Property Name="BatchID" Type="int" />
+    <Property Name="SessonID" Type="int" />
+    <Property Name="F_Name" Type="varchar" MaxLength="80" />
+    <Property Name="M_Name" Type="varchar" MaxLength="80" />
+    <Property Name="BirthDate" Type="date" />
+    <Property Name="NationalID" Type="varchar" MaxLength="30" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Religion" Type="varchar" MaxLength="20" />
+    <Property Name="Caste" Type="varchar" MaxLength="20" />
+    <Property Name="Nationality" Type="varchar" MaxLength="30" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="Ssc_passed_Yeae" Type="varchar" MaxLength="10" />
+    <Property Name="Ssc_Roll" Type="varchar" MaxLength="30" />
+    <Property Name="Ssc_Result" Type="varchar" MaxLength="10" />
+    <Property Name="Ssc_Board" Type="varchar" MaxLength="100" />
+    <Property Name="Hsc_passed_Yeae" Type="varchar" MaxLength="10" />
+    <Property Name="Hsc_Roll" Type="varchar" MaxLength="30" />
+    <Property Name="Hsc_Result" Type="varchar" MaxLength="10" />
+    <Property Name="Hsc_Board" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="Division" Type="varchar" MaxLength="50" />
+    <Property Name="Distric" Type="varchar" MaxLength="50" />
+    <Property Name="Thana" Type="varchar" MaxLength="50" />
+    <Property Name="Post_Office" Type="varchar" MaxLength="80" />
+    <Property Name="Post_Code" Type="varchar" MaxLength="20" />
+    <Property Name="Present_Address" Type="varchar" MaxLength="800" />
+    <Property Name="Guardian_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Guardian_mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Guardian_Email" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tblTeacherCourse">
+    <Key>
+      <PropertyRef Name="tblTeacherCourseID" />
+    </Key>
+    <Property Name="tblTeacherCourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CID" Type="int" />
+    <Property Name="TeacherId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblTeachers">
+    <Key>
+      <PropertyRef Name="TeacherID" />
+    </Key>
+    <Property Name="TeacherID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="80" />
+    <Property Name="TeacherImagePath" Type="varchar" MaxLength="500" />
+    <Property Name="Deparment" Type="varchar" MaxLength="100" />
+    <Property Name="F_Name" Type="varchar" MaxLength="80" />
+    <Property Name="M_Name" Type="varchar" MaxLength="80" />
+    <Property Name="BirthDate" Type="date" />
+    <Property Name="NationalID" Type="varchar" MaxLength="30" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Religion" Type="varchar" MaxLength="20" />
+    <Property Name="Caste" Type="varchar" MaxLength="20" />
+    <Property Name="Nationality" Type="varchar" MaxLength="30" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="BSc_Result" Type="varchar" MaxLength="10" />
+    <Property Name="BSc_Univarsity" Type="varchar" MaxLength="100" />
+    <Property Name="MSc_Result" Type="varchar" MaxLength="10" />
+    <Property Name="MSc_Univarsity" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="Division" Type="varchar" MaxLength="50" />
+    <Property Name="Distric" Type="varchar" MaxLength="50" />
+    <Property Name="Thana" Type="varchar" MaxLength="50" />
+    <Property Name="Post_Office" Type="varchar" MaxLength="80" />
+    <Property Name="Post_Code" Type="varchar" MaxLength="20" />
+    <Property Name="Present_Address" Type="varchar" MaxLength="800" />
+  </EntityType>
+  <EntityType Name="tblTheoryResult">
+    <Key>
+      <PropertyRef Name="TheoryResultID" />
+    </Key>
+    <Property Name="TheoryResultID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" />
+    <Property Name="CID" Type="int" />
+    <Property Name="TheoryMark" Type="float" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="User_Password" Type="varchar" MaxLength="20" />
+    <Property Name="User_CPassword" Type="varchar" MaxLength="20" />
+    <Property Name="User_RoleId" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="DeptMofaUniversityModelStoreContainer">
+    <EntitySet Name="tblBatch" EntityType="Self.tblBatch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCourse" EntityType="Self.tblCourse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMidResult" EntityType="Self.tblMidResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblResources" EntityType="Self.tblResources" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRole" EntityType="Self.tblRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSemester" EntityType="Self.tblSemester" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSesson" EntityType="Self.tblSesson" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblStudents" EntityType="Self.tblStudents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTeacherCourse" EntityType="Self.tblTeacherCourse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTeachers" EntityType="Self.tblTeachers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblTheoryResult" EntityType="Self.tblTheoryResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

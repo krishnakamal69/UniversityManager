@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DeptMofaUniversityModel1StoreContainer" CdmEntityContainer="TeacherCoureAssigeConn">
+    <EntitySetMapping Name="tblTeacherCourseAssigns">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel1.tblTeacherCourseAssign">
+        <MappingFragment StoreEntitySet="tblTeacherCourseAssign">
+          <ScalarProperty Name="tblTeacherCourseID" ColumnName="tblTeacherCourseID" />
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="TeacherEmail" ColumnName="TeacherEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

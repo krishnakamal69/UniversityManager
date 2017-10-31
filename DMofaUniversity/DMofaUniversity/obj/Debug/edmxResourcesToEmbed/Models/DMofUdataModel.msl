@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DeptMofaUniversityModelStoreContainer" CdmEntityContainer="DeptMofaUniversityConn">
+    <EntitySetMapping Name="tblBatches">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel.tblBatch">
+        <MappingFragment StoreEntitySet="tblBatch">
+          <ScalarProperty Name="BID" ColumnName="BID" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCourses">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel.tblCourse">
+        <MappingFragment StoreEntitySet="tblCourse">
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="Course_Code" ColumnName="Course_Code" />
+          <ScalarProperty Name="Course_Title" ColumnName="Course_Title" />
+          <ScalarProperty Name="MajorNonMajor" ColumnName="MajorNonMajor" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMidResults">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel.tblMidResult">
+        <MappingFragment StoreEntitySet="tblMidResult">
+          <ScalarProperty Name="MidResultID" ColumnName="MidResultID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="FirstMidMark" ColumnName="FirstMidMark" />
+          <ScalarProperty Name="SecondtMidMark" ColumnName="SecondtMidMark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblResources">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel.tblResource">
+        <MappingFragment StoreEntitySet="tblResources">
+          <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="FileTitle" ColumnName="FileTitle" />
+          <ScalarProperty Name="FileAuthor" ColumnName="FileAuthor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRoles">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel.tblRole">
+        <MappingFragment StoreEntitySet="tblRole">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+          <ScalarProperty Name="Role_Code" ColumnName="Role_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSemesters">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel.tblSemester">
+        <MappingFragment StoreEntitySet="tblSemester">
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSessons">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel.tblSesson">
+        <MappingFragment StoreEntitySet="tblSesson">
+          <ScalarProperty Name="SessonID" ColumnName="SessonID" />
+          <ScalarProperty Name="Sesson" ColumnName="Sesson" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStudents">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel.tblStudent">
+        <MappingFragment StoreEntitySet="tblStudents">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="Roll" ColumnName="Roll" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StudentImagePath" ColumnName="StudentImagePath" />
+          <ScalarProperty Name="Deparment" ColumnName="Deparment" />
+          <ScalarProperty Name="SemisterID" ColumnName="SemisterID" />
+          <ScalarProperty Name="BatchID" ColumnName="BatchID" />
+          <ScalarProperty Name="SessonID" ColumnName="SessonID" />
+          <ScalarProperty Name="F_Name" ColumnName="F_Name" />
+          <ScalarProperty Name="M_Name" ColumnName="M_Name" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Caste" ColumnName="Caste" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Ssc_passed_Yeae" ColumnName="Ssc_passed_Yeae" />
+          <ScalarProperty Name="Ssc_Roll" ColumnName="Ssc_Roll" />
+          <ScalarProperty Name="Ssc_Result" ColumnName="Ssc_Result" />
+          <ScalarProperty Name="Ssc_Board" ColumnName="Ssc_Board" />
+          <ScalarProperty Name="Hsc_passed_Yeae" ColumnName="Hsc_passed_Yeae" />
+          <ScalarProperty Name="Hsc_Roll" ColumnName="Hsc_Roll" />
+          <ScalarProperty Name="Hsc_Result" ColumnName="Hsc_Result" />
+          <ScalarProperty Name="Hsc_Board" ColumnName="Hsc_Board" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="Distric" ColumnName="Distric" />
+          <ScalarProperty Name="Thana" ColumnName="Thana" />
+          <ScalarProperty Name="Post_Office" ColumnName="Post_Office" />
+          <ScalarProperty Name="Post_Code" ColumnName="Post_Code" />
+          <ScalarProperty Name="Present_Address" ColumnName="Present_Address" />
+          <ScalarProperty Name="Guardian_Name" ColumnName="Guardian_Name" />
+          <ScalarProperty Name="Guardian_mobile" ColumnName="Guardian_mobile" />
+          <ScalarProperty Name="Guardian_Email" ColumnName="Guardian_Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTeacherCourses">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel.tblTeacherCourse">
+        <MappingFragment StoreEntitySet="tblTeacherCourse">
+          <ScalarProperty Name="tblTeacherCourseID" ColumnName="tblTeacherCourseID" />
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTeachers">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel.tblTeacher">
+        <MappingFragment StoreEntitySet="tblTeachers">
+          <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TeacherImagePath" ColumnName="TeacherImagePath" />
+          <ScalarProperty Name="Deparment" ColumnName="Deparment" />
+          <ScalarProperty Name="F_Name" ColumnName="F_Name" />
+          <ScalarProperty Name="M_Name" ColumnName="M_Name" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Caste" ColumnName="Caste" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="BSc_Result" ColumnName="BSc_Result" />
+          <ScalarProperty Name="BSc_Univarsity" ColumnName="BSc_Univarsity" />
+          <ScalarProperty Name="MSc_Result" ColumnName="MSc_Result" />
+          <ScalarProperty Name="MSc_Univarsity" ColumnName="MSc_Univarsity" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="Distric" ColumnName="Distric" />
+          <ScalarProperty Name="Thana" ColumnName="Thana" />
+          <ScalarProperty Name="Post_Office" ColumnName="Post_Office" />
+          <ScalarProperty Name="Post_Code" ColumnName="Post_Code" />
+          <ScalarProperty Name="Present_Address" ColumnName="Present_Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTheoryResults">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel.tblTheoryResult">
+        <MappingFragment StoreEntitySet="tblTheoryResult">
+          <ScalarProperty Name="TheoryResultID" ColumnName="TheoryResultID" />
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="TheoryMark" ColumnName="TheoryMark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="DeptMofaUniversityModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="User_CPassword" ColumnName="User_CPassword" />
+          <ScalarProperty Name="User_RoleId" ColumnName="User_RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

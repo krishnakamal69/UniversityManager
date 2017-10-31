@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Addendum<span class="caret"></span></a>
+                        <ul class=" dropdown-menu">
+                            <li>@Html.ActionLink("add Teacher", "SaveTeache", "ManageTeache")</li>
+                            <li>@Html.ActionLink("add Student", "SaveStudent", "Manage2Student")</li>
+                            <li>@Html.ActionLink("add Batch", "SaveBatch", "ManageBatch")</li>
+                            <li>@Html.ActionLink("add Semester", "SaveSemester", "ManageSemester")</li>
+                            <li>@Html.ActionLink("add Sesson", "SaveSesson", "ManageSesson")</li>
+                            <li>@Html.ActionLink("add Course", "SaveCourse", "ManageCourse")</li>
+                            <li>@Html.ActionLink("Course Assigne", "SaveCourseToTeacher", "ManageCourseTeacher")</li>
+                            <li>@Html.ActionLink("add Role", "SaveRole", "ManageRole")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Informations<span class="caret"></span></a>
+                        <ul class=" dropdown-menu">
+                            <li>@Html.ActionLink("Teacher's information", "ShowTeache", "ManageTeache")</li>
+                            <li>@Html.ActionLink("Student's information", "ShowStudent", "Manage2Student")</li>
+                        </ul>
+                    </li>
+                    <li style="float: left">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User<span class="caret"></span></a>
+                        <ul class=" dropdown-menu">
+                            <li>@Html.ActionLink("Register", "ManageRegistrationForm", "ManageRegistration")</li>
+                            <li>@Html.ActionLink("LogIn", "ManageLogIn", "ManageRegistration")</li>
+                            <li>@Html.ActionLink("LogOut", "Logout", "ManageRegistration")</li>
+
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Result", "GetResultSheet", "ManageResult")</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    <img src="~/Picofhead/AdobeStock_47128567-2560x1200.jpg" height="150" width="100%" />
+    <div class="container body-content" style="background-color: antiquewhite">
+        
+        @RenderBody()
+        <br/><br/><br/><br /><br /><br /><br /><br /><br />
+        <hr />
+        <footer style=" background-color: thistle">
+            <div style="background-color: burlywood">
+                <p style="float: left">&copy; @DateTime.Now.Year==> Autherity<span><br /></span> Krishna kamal Roy <span><br /> & </span> khushi </p>
+                <p style="float: right">Suppervised by :<span><br /></span>Roksana popi<span><br /></span>Lecturer at Jagannath University </p>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
